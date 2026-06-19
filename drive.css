@@ -1,0 +1,377 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+.navbar{
+    background:black;
+    color:white;
+    padding:20px 60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* Drive Sub Navbar */
+
+.drive-navbar{
+    background:#ffffff;
+    height:75px;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.drive-container{
+    width:85%;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.drive-logo h2{
+    font-size:28px;
+    font-weight:700;
+    color:#000;
+}
+
+.drive-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.drive-links li a{
+    text-decoration:none;
+    color:#6b6b6b;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.drive-links li a:hover{
+    color:#000;
+}
+
+/* Responsive */
+
+@media(max-width:1024px){
+
+    .drive-container{
+        flex-direction:column;
+        gap:15px;
+        padding:15px 0;
+    }
+
+    .drive-navbar{
+        height:auto;
+    }
+
+    .drive-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+}
+.logo{
+    font-size:40px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.right-nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.right-nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.right-nav button{
+    background:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
+}
+
+/* HERO */
+
+.hero{
+    background:black;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:80px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:1.1;
+}
+
+.hero p{
+    margin:25px 0;
+}
+
+.hero button{
+    padding:15px 30px;
+}
+
+.hero-image img{
+    width:500px;
+}
+
+/* REQUIREMENTS */
+
+.requirements{
+    padding:80px;
+    background:#f5f5f5;
+}
+
+.requirements h2{
+    font-size:50px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+}
+
+.card{
+    flex:1;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+/* SAFETY */
+
+.safety{
+    padding:80px;
+}
+
+.safety h2{
+    font-size:50px;
+    margin-bottom:50px;
+}
+
+.safety-grid{
+    display:flex;
+    gap:40px;
+}
+
+.safety-grid img{
+    width:80px;
+    margin-bottom:15px;
+}
+
+/* FAQ */
+
+.faq{
+    padding:80px;
+    background:#fafafa;
+}
+
+.faq h2{
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.faq-item{
+    padding:25px 0;
+    border-bottom:1px solid #ddd;
+    font-size:22px;
+}
+
+/* DRIVER APP */
+
+.driver-app{
+    height:450px;
+
+    background:url("images/app-banner.jpg");
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.overlay{
+    background:rgba(0,0,0,.5);
+
+    position:absolute;
+    inset:0;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding-left:80px;
+}
+
+.overlay h2{
+    font-size:55px;
+}
+
+.overlay p{
+    margin-top:20px;
+    width:500px;
+}
+
+/* DOWNLOAD */
+
+.download{
+    padding:80px;
+    background:#f5f5f5;
+}
+
+.download h2{
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.download-card{
+    width:700px;
+
+    background:white;
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.download-card img{
+    width:150px;
+}
+
+/* STICKY BUTTON */
+
+.sticky-btn{
+    position:fixed;
+    left:15px;
+    right:15px;
+    bottom:15px;
+
+    background:black;
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-size:20px;
+    font-weight:bold;
+}
+.why-drive{
+    background:#f6f6f6;
+    padding:80px 0;
+}
+
+.container{
+    width:85%;
+    margin:auto;
+}
+
+.why-drive h2{
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:40px;
+    color:#222;
+}
+
+.banner{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.banner img{
+    width:100%;
+    max-width:1000px;
+}
+
+/* Features */
+
+.features{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.feature{
+    flex:1;
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.feature h3{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#222;
+}
+
+.feature p{
+    font-size:18px;
+    line-height:1.7;
+    color:#444;
+}
+
+/* Link */
+
+.drive-link{
+    text-decoration:none;
+    color:#000;
+    font-size:20px;
+    border-bottom:1px solid #ccc;
+    padding-bottom:8px;
+}
+
+.drive-link:hover{
+    border-color:#000;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .why-drive h2{
+        font-size:40px;
+    }
+
+    .features{
+        flex-direction:column;
+    }
+
+    .feature{
+        margin-bottom:30px;
+    }
+
+    .banner img{
+        width:100%;
+    }
+}

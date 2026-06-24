@@ -8,6 +8,7 @@ export default function Navbar() {
   const menuRef = useRef(null);
 
   useEffect(() => {
+    
     const handleClick = (e) => { if (menuRef.current && !menuRef.current.contains(e.target)) setDropdownOpen(false); };
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);

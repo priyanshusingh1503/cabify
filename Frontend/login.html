@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | Uber Clone</title>
+    <!-- Modern Sans-serif Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <!-- Top Black Header -->
+    <header class="header">
+        <div class="header-content">
+            <span class="logo" id="logo-button">Uber</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Inner wrapper for views transitions -->
+        <div class="view-slider" id="view-slider">
+            
+            <!-- View 1: Main Login Screen -->
+            <section class="view active" id="login-view">
+                <h1 class="view-heading">What's your phone number or email?</h1>
+                
+                <form id="login-form" novalidate>
+                    <div class="input-wrapper" id="input-container">
+                        <input 
+                            type="text" 
+                            id="phone-email" 
+                            placeholder="Enter phone number or email"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Alert Error Banner -->
+                    <div class="error-banner" id="error-banner">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="error-icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span id="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="btn-continue">Continue</button>
+                </form>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <div class="social-login-group">
+                    <button class="btn-secondary" id="btn-google">
+                        <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.96 5.96 0 0 1 8.07 12.56a5.96 5.96 0 0 1 5.92-5.956c1.616 0 3.085.614 4.228 1.623l3.05-3.048A10.137 10.137 0 0 0 13.99 2.22C8.243 2.22 3.58 6.848 3.58 12.56c0 5.71 4.663 10.34 10.41 10.34 5.998 0 9.98-4.215 9.98-10.16 0-.614-.055-1.205-.156-1.776H12.24Z"/>
+                            <path fill="#4285F4" d="M23.814 10.925c-.01-.358-.04-.716-.09-1.07H12.24v4.114h6.887c-.286 1.488-1.127 2.766-2.38 3.61l3.693 2.865c2.16-1.992 3.374-4.928 3.374-8.52Z"/>
+                            <path fill="#FBBC05" d="M6.35 15.023A5.963 5.963 0 0 1 5.92 12.56c0-.877.164-1.716.43-2.497l-3.79-2.937a10.176 10.176 0 0 0-.02 10.871l3.81-3.027c-.22-.303-.434-.637-.62-1.047Z"/>
+                            <path fill="#34A853" d="M13.99 22.9c2.72 0 5.01-.902 6.685-2.434l-3.693-2.865c-1.02.684-2.327 1.096-3.878 1.096-2.986 0-5.518-2.022-6.42-4.743l-3.81 3.027C4.697 20.316 9.027 22.9 13.99 22.9Z"/>
+                        </svg>
+                        <span>Continue with Google</span>
+                    </button>
+                    <button class="btn-secondary" id="btn-apple">
+                        <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-.96.04-2.13.64-2.82 1.45-.6.69-1.12 1.83-.98 2.94 1.07.08 2.15-.52 2.81-1.33z"/>
+                        </svg>
+                        <span>Continue with Apple</span>
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <button class="btn-secondary btn-qr" id="btn-qr">
+                    <svg class="social-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                        <path d="M14 14h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2zm2-2h2v2h-2z"/>
+                    </svg>
+                    <span>Log in with QR code</span>
+                </button>
+
+                <p class="terms-text">
+                    You consent to receive a verification code by text or WhatsApp. Message and data rates may apply.
+                </p>
+            </section>
+
+            <!-- View 2: OTP Verification Screen -->
+            <section class="view" id="otp-view">
+                <button class="btn-back" id="otp-back">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+                
+                <h1 class="view-heading">Enter the 4-digit code</h1>
+                <p class="view-subtext">Sent to <strong id="user-display-id">user@example.com</strong></p>
+
+                <div class="otp-container">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+                </div>
+
+                <div class="error-banner" id="otp-error-banner">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="error-icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>Invalid code. Please try again.</span>
+                </div>
+
+                <div class="otp-timer-container">
+                    <span id="otp-timer-text">Resend code in <strong id="otp-timer-val">30</strong>s</span>
+                    <button class="btn-text-link" id="otp-resend" disabled>Resend code</button>
+                </div>
+
+                <div class="helper-info">
+                    <p>Tip: Enter any 4 numbers (e.g. 1 2 3 4) to sign in.</p>
+                </div>
+
+                <div class="otp-actions">
+                    <button class="btn-primary" id="btn-verify">Verify</button>
+                </div>
+                
+            </section>
+
+            <!-- View 3: QR Code Scanner Screen -->
+            <section class="view" id="qr-view">
+                <button class="btn-back" id="qr-back">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+
+                <h1 class="view-heading">Log in with QR code</h1>
+                <p class="view-subtext">Scan this code with your mobile device's camera to log in instantly.</p>
+
+                <!-- Premium QR Scanner simulation area -->
+                <div class="qr-scanner-box">
+                    <div class="qr-laser-line"></div>
+                    <!-- Custom SVG representing a clean, high-tech QR code -->
+                    <svg viewBox="0 0 100 100" class="qr-code-svg">
+                        <!-- Finder Patterns -->
+                        <!-- Top-Left -->
+                        <path d="M10 10h30v30H10z" fill="none" stroke="currentColor" stroke-width="5"/>
+                        <path d="M18 18h14v14H18z" fill="currentColor"/>
+                        <!-- Top-Right -->
+                        <path d="M60 10h30v30H60z" fill="none" stroke="currentColor" stroke-width="5"/>
+                        <path d="M68 18h14v14H68z" fill="currentColor"/>
+                        <!-- Bottom-Left -->
+                        <path d="M10 60h30v30H10z" fill="none" stroke="currentColor" stroke-width="5"/>
+                        <path d="M18 68h14v14H18z" fill="currentColor"/>
+                        
+                        <!-- Alignment Pattern -->
+                        <rect x="70" y="70" width="10" height="10" fill="currentColor"/>
+                        
+                        <!-- Random bits / data matrices -->
+                        <rect x="45" y="15" width="5" height="5" fill="currentColor"/>
+                        <rect x="50" y="20" width="5" height="5" fill="currentColor"/>
+                        <rect x="45" y="30" width="5" height="5" fill="currentColor"/>
+                        <rect x="50" y="35" width="5" height="5" fill="currentColor"/>
+                        <rect x="15" y="45" width="5" height="5" fill="currentColor"/>
+                        <rect x="25" y="50" width="5" height="5" fill="currentColor"/>
+                        <rect x="35" y="45" width="5" height="5" fill="currentColor"/>
+                        <rect x="45" y="45" width="10" height="5" fill="currentColor"/>
+                        <rect x="55" y="50" width="5" height="10" fill="currentColor"/>
+                        <rect x="70" y="50" width="5" height="5" fill="currentColor"/>
+                        <rect x="80" y="45" width="5" height="5" fill="currentColor"/>
+                        <rect x="85" y="55" width="5" height="5" fill="currentColor"/>
+                        <rect x="45" y="60" width="5" height="5" fill="currentColor"/>
+                        <rect x="50" y="70" width="5" height="5" fill="currentColor"/>
+                        <rect x="45" y="80" width="10" height="5" fill="currentColor"/>
+                        <rect x="58" y="78" width="5" height="5" fill="currentColor"/>
+                        <rect x="60" y="60" width="5" height="10" fill="currentColor"/>
+                        <rect x="80" y="62" width="5" height="5" fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <div class="qr-status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span>Waiting for scan...</span>
+                </div>
+            </section>
+
+            <!-- View 4: Success Screen -->
+            <section class="view" id="success-view">
+                <div class="success-icon-container">
+                    <svg viewBox="0 0 100 100" class="checkmark-svg">
+                        <circle class="checkmark-circle" cx="50" cy="50" r="45" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M25 52 l17 17 l33 -34"/>
+                    </svg>
+                </div>
+                
+                <h1 class="view-heading text-center">Welcome back!</h1>
+                <p class="view-subtext text-center" id="success-message-text">You have successfully signed in.</p>
+                
+                <button class="btn-primary" id="btn-dashboard-mock">Go to Uber Dashboard</button>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Simulated Google / Apple OAuth Modal -->
+    <div class="modal-overlay" id="oauth-modal">
+        <div class="oauth-box">
+            <button class="modal-close" id="oauth-close">&times;</button>
+            <div class="oauth-header">
+                <img id="oauth-logo" src="" alt="OAuth Logo" class="oauth-logo-img hidden">
+                <div id="oauth-svg-holder"></div>
+                <h2 id="oauth-title">Sign in with Google</h2>
+                <p class="oauth-subtitle">to continue to Uber Clone</p>
+            </div>
+            
+            <div class="oauth-body" id="oauth-body-content">
+                <!-- Selection View -->
+                <div class="oauth-accounts" id="oauth-accounts">
+                    <div class="account-row" data-email="uber.rider@gmail.com" data-name="Alex Mercer">
+                        <div class="account-avatar">AM</div>
+                        <div class="account-info">
+                            <span class="account-name">Alex Mercer</span>
+                            <span class="account-email">uber.rider@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="account-row" data-email="developer.test@gmail.com" data-name="Jane Doe">
+                        <div class="account-avatar">JD</div>
+                        <div class="account-info">
+                            <span class="account-name">Jane Doe</span>
+                            <span class="account-email">developer.test@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="account-row font-small text-muted" id="btn-oauth-custom">
+                        <span class="plus-icon">+</span> Use another account
+                    </div>
+                </div>
+
+                <!-- Custom Account Form (Initially hidden) -->
+                <div class="oauth-custom-form hidden" id="oauth-custom-form">
+                    <input type="email" id="oauth-custom-email" placeholder="Email or phone" class="oauth-input-field">
+                    <button class="btn-primary-oauth" id="btn-oauth-submit">Next</button>
+                </div>
+
+                <!-- Loading State (Initially hidden) -->
+                <div class="oauth-loading hidden" id="oauth-loading">
+                    <div class="spinner"></div>
+                    <p>Connecting to Uber...</p>
+                </div>
+            </div>
+
+            <footer class="oauth-footer">
+                To continue, Google/Apple will share your name, email address, language preference, and profile picture with Uber.
+            </footer>
+        </div>
+    </div>
+
+    <script src="index4.js"></script>
+</body>
+</html>

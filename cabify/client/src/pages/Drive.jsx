@@ -51,16 +51,7 @@ export default function Drive() {
   ];
 
   return (
-    <div style={{ fontFamily: "'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif" }}>
-      <nav style={{ height: 64, background: '#fff', borderBottom: '1px solid #e2e2e2', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <a href="/" style={{ fontSize: 24, fontWeight: 700, color: '#000', textDecoration: 'none', letterSpacing: '-0.05em' }}>Uber</a>
-          <span style={{ fontSize: 14, color: '#5e5e5e', cursor: 'pointer' }} onClick={() => navigate('/ride')}>Ride</span>
-          <span style={{ fontSize: 14, fontWeight: 500, borderBottom: '2px solid #000', paddingBottom: 2, cursor: 'pointer' }}>Drive</span>
-          <span style={{ fontSize: 14, color: '#5e5e5e', cursor: 'pointer' }} onClick={() => navigate('/courier')}>Courier</span>
-        </div>
-        <button onClick={() => navigate('/login')} style={{ background: '#000', color: '#fff', border: 'none', borderRadius: 100, padding: '10px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Log in</button>
-      </nav>
+    <div style={{ fontFamily: "'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif", minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
       {/* Hero */}
       <section style={{ background: '#f6f6f6', padding: '60px 24px', textAlign: 'center' }}>

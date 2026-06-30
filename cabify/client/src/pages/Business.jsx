@@ -71,16 +71,6 @@ export default function Business() {
 
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif" }}>
-      {/* Nav */}
-      <nav style={{ height: 64, background: '#fff', borderBottom: '1px solid #e2e2e2', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <a href="/" style={{ fontSize: 24, fontWeight: 700, color: '#000', textDecoration: 'none', letterSpacing: '-0.05em' }}>Uber</a>
-          <span style={{ fontSize: 14, color: '#5e5e5e', cursor: 'pointer' }} onClick={() => navigate('/ride')}>Ride</span>
-          <span style={{ fontSize: 14, color: '#5e5e5e', cursor: 'pointer' }} onClick={() => navigate('/drive-page')}>Drive</span>
-          <span style={{ fontSize: 14, fontWeight: 500, borderBottom: '2px solid #000', paddingBottom: 2, cursor: 'pointer' }}>Business</span>
-        </div>
-        <button onClick={() => navigate('/login')} style={{ background: '#000', color: '#fff', border: 'none', borderRadius: 100, padding: '10px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Get started</button>
-      </nav>
 
       {/* Hero */}
       <section style={{ background: '#000', color: '#fff', padding: '80px 24px', textAlign: 'center' }}>
@@ -90,8 +80,8 @@ export default function Business() {
             Simplify business travel and meals. Give your team the flexibility to ride and eat on the company account.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
-            <button style={{ background: '#fff', color: '#000', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Get started</button>
-            <button style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.4)', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Contact sales</button>
+            <button onClick={() => navigate('/uber-business')} style={{ background: '#fff', color: '#000', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Get started</button>
+            <button onClick={() => navigate('/uber-business')} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.4)', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Contact sales</button>
           </div>
         </div>
       </section>
@@ -159,7 +149,7 @@ export default function Business() {
                   </li>
                 ))}
               </ul>
-              <button style={{ width: '100%', height: 44, background: plan.popular ? '#000' : '#f6f6f6', color: plan.popular ? '#fff' : '#000', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Get started</button>
+              <button onClick={() => navigate('/uber-business')} style={{ width: '100%', height: 44, background: plan.popular ? '#000' : '#f6f6f6', color: plan.popular ? '#fff' : '#000', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Get started</button>
             </div>
           ))}
         </div>
@@ -207,7 +197,7 @@ export default function Business() {
       <section style={{ padding: '60px 24px', textAlign: 'center', background: '#f6f6f6' }}>
         <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 12 }}>Ready to simplify business travel?</h2>
         <p style={{ fontSize: 16, color: '#5e5e5e', marginBottom: 24 }}>Join thousands of companies using Uber for Business.</p>
-        <button style={{ background: '#000', color: '#fff', border: 'none', borderRadius: 8, padding: '16px 48px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Get started free</button>
+        <button onClick={() => navigate('/uber-business')} style={{ background: '#000', color: '#fff', border: 'none', borderRadius: 8, padding: '16px 48px', fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>Get started free</button>
       </section>
     </div>
   );

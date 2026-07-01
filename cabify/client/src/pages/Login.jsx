@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { showToast } from '../components/Toast';
 
 export default function Login() {
-  const [view, setView] = useState('login'); // login | otp | qr | success
+  const [view, setView] = useState('select'); // select | login | otp | qr | success
   const [email, setEmail] = useState('');
   const [otpValues, setOtpValues] = useState(['','','','']);
   const [timer, setTimer] = useState(30);
@@ -68,9 +68,43 @@ export default function Login() {
       <main style={{ flex: 1, display: 'flex', justifyContent: 'center', padding: '64px 24px' }}>
         <div style={{ width: '100%', maxWidth: 440, position: 'relative', minHeight: 500 }}>
 
+          {/* VIEW: ROLE SELECT */}
+          {view === 'select' && (
+            <div style={{ animation: 'slideUpFade 0.4s forwards' }}>
+              <h1 style={{ fontSize: 32, fontWeight: 500, lineHeight: '40px', letterSpacing: '-0.02em', marginBottom: 40, textAlign: 'center' }}>Welcome to Uber</h1>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <button onClick={() => setView('login')} style={{ background: '#fff', color: '#000', border: '2px solid #e2e2e2', height: 80, borderRadius: 12, fontSize: 18, fontWeight: 500, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 16, padding: '0 24px', transition: 'all 0.2s' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#000'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e2e2'; e.currentTarget.style.boxShadow = 'none'; }}>
+                  <div style={{ width: 48, height: 48, background: '#f6f6f6', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontWeight: 600, fontSize: 18 }}>User Login</div>
+                    <div style={{ fontSize: 14, color: '#5e5e5e', fontWeight: 400 }}>Book rides with Uber</div>
+                  </div>
+                </button>
+                <button onClick={() => navigate('/driver')} style={{ background: '#fff', color: '#000', border: '2px solid #e2e2e2', height: 80, borderRadius: 12, fontSize: 18, fontWeight: 500, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 16, padding: '0 24px', transition: 'all 0.2s' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#000'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e2e2'; e.currentTarget.style.boxShadow = 'none'; }}>
+                  <div style={{ width: 48, height: 48, background: '#f6f6f6', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontWeight: 600, fontSize: 18 }}>Driver Login</div>
+                    <div style={{ fontSize: 14, color: '#5e5e5e', fontWeight: 400 }}>Earn money by driving</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* VIEW: LOGIN */}
           {view === 'login' && (
             <div style={{ animation: 'slideUpFade 0.4s forwards' }}>
+              <button onClick={() => setView('select')} style={{ background: 'transparent', border: 'none', cursor: 'pointer', width: 40, height: 40, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: -10, marginBottom: 20, color: '#000' }}>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              </button>
               <h1 style={{ fontSize: 32, fontWeight: 500, lineHeight: '40px', letterSpacing: '-0.02em', marginBottom: 24 }}>What's your phone number or email?</h1>
               <div style={{ position: 'relative', width: '100%', borderRadius: 8, background: '#f6f6f6', border: '2px solid #000', overflow: 'hidden' }}>
                 <input type="text" placeholder="Enter phone number or email" value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendOtp()} style={{ width: '100%', height: 54, border: 'none', background: 'transparent', padding: '0 16px', fontSize: 16, outline: 'none' }} />

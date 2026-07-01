@@ -26,5 +26,5 @@ export function useSocket() {
   }, []);
 
   const emit = (event, data) => socketRef.current?.emit(event, data);
-  return { drivers, connected, emit };
+  return { drivers, connected, emit, socket: socketRef.current };
 }

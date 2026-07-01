@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom'
-import UberHeader from '../components/UberHeader'
-import UberFooter from '../components/UberFooter'
 
 export default function About() {
   return (
     <div className="bg-white text-black antialiased" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' }}>
-      <UberHeader activeLink="about" />
 
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-24">
         <section className="space-y-8">
@@ -103,8 +100,6 @@ export default function About() {
           <Link to="/career" className="inline-block bg-black text-white text-sm font-semibold px-6 py-3.5 rounded-md hover:bg-gray-800 transition">Search open roles</Link>
         </section>
       </main>
-
-      <UberFooter />
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Ride.jsx'; 
 
 export default function Home() {
   const navigate = useNavigate();

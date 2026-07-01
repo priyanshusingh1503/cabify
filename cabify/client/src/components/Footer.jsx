@@ -9,14 +9,14 @@ export default function Footer() {
           <Link to="#" style={{ color: '#fff', textDecoration: 'none', fontSize: 16 }}>Visit Help Center</Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 60, marginBottom: 70 }}>
-          {[{ title:'Company', links:['About us','Our offerings','Newsroom','Investors','Blog','Careers','Uber One'] },
-            { title:'Products', links:['Ride','Drive','Eat','Uber for Business','Uber Freight','Gift cards','Uber Health','Uber Advertising'] },
-            { title:'Global citizenship', links:['Safety','Sustainability'] },
-            { title:'Travel', links:['Reserve','Airports','Cities'] }
+          {[{ title:'Company', links:[{text:'About us',to:'/about'},{text:'Our offerings',to:'/offerings'},{text:'Newsroom',to:'/Newsroom'},{text:'Investors',to:'#'},{text:'Blog',to:'#'},{text:'Careers',to:'/Careers'},{text:'Uber One',to:'/Uber-one'}] },
+            { title:'Products', links:[{text:'Ride',to:'/ride'},{text:'Drive',to:'/drive'},{text:'Eat',to:'/eat'},{text:'Uber for Business',to:'/business'},{text:'Uber Freight',to:'#'},{text:'Gift cards',to:'#'},{text:'Uber Health',to:'#'},{text:'Uber Advertising',to:'#'}] },
+            { title:'Global citizenship', links:[{text:'Safety',to:'/safety'},{text:'Sustainability',to:'/sustainability'}] },
+            { title:'Travel', links:[{text:'Reserve',to:'#'},{text:'Airports',to:'/airports'},{text:'Cities',to:'/cities'}] }
           ].map(col => (
             <div key={col.title}>
               <h3 style={{ fontSize: 22, marginBottom: 25 }}>{col.title}</h3>
-              {col.links.map(l => <Link key={l} to="#" style={{ display:'block', color:'#fff', textDecoration:'none', marginBottom:16, fontSize:15 }}>{l}</Link>)}
+              {col.links.map(l => <Link key={l.text} to={l.to} style={{ display:'block', color:'#fff', textDecoration:'none', marginBottom:16, fontSize:15 }}>{l.text}</Link>)}
             </div>
           ))}
         </div>
